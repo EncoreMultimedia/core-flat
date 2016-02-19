@@ -1,0 +1,16 @@
+robots.txt
+.DS_Store
+.sass-cache/
+sprites-*.png
+sprites2x-*.png
+sprites3x-*.png
+*.swp
+*.swo
+/css
+/images
+/js/script.js
+/src/css
+*.sublime-project
+*.sublime-workspace
+node_modules
+npm-debug.log

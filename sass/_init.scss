@@ -1,0 +1,112 @@
+//
+// Initialization partial
+//
+// To make it easier to use all variables and mixins in any Sass file in this
+// theme, each .scss file has a @import "init" declaration. And this _init.scss
+// file is in charge of importing all the other partials needed for the theme.
+//
+// This initialization partial is organized in this way:
+// - First we set any shared Sass variables.
+// - Next we import Compass plug-ins (Sass mixin libraries).
+// - Last we define our custom mixins for this theme.
+//
+
+// =============================================================================
+// Variables
+// =============================================================================
+
+//
+// Font faces, stacks and sizes.
+//
+
+// Compass' vertical_rhythm extension is a powerful tool to set up a vertical
+// rhythm for your entire page. You can see some of its mixins and functions in
+// use in the normalize.scss file.
+// @see http://compass-style.org/reference/compass/typography/vertical_rhythm/
+
+$base-font-size:   16px; // The font size set on the root html element.
+$base-line-height: 24px; // This line-height determines the basic unit of vertical rhythm.
+
+// The following font family declarations are based on the Microsoft core web
+// fonts which are common fonts available on most computer systems. The DejaVu
+// and Nimbus Sans fonts are commonly available on Linux systems where the MS
+// fonts are less common. Tahoma and Helvetica are also widely available.
+
+// First, let's create some font stacks.
+$font_sourcesans: "Source Sans Pro", Tahoma, "DejaVu Sans", sans-serif;
+
+// For an explanation of why "sans-serif" is at the end of this list, see
+// http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
+$courier:         "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
+
+// Now create some variables for the font stacks we want to use on this site.
+$base_font_family: $font_sourcesans; // The font family set on the html element.
+$font_body:        $font_sourcesans;
+$font-monospace:   $courier;
+
+// =============================================================================
+// Grayscale and Color Palette
+// =============================================================================
+
+// Primary Colors
+$color_white: #ffffff;
+$color_black: #000000;
+
+// Tab styling.
+$tabs_container_bg: #fff;
+$tabs_border: #bbb;
+
+// =============================================================================
+// Base Sizing, Gutters, and Margins
+// =============================================================================
+
+// Gutters
+$gutter_mobile:        em(22, true);
+$gutter_tablet:        em(58, true);
+$gutter_desktop:       em(20, true);
+
+$width_max: em(1280, true);
+
+// Sprite width
+// Once the sprites are generated, update the width of the non retina sprite
+$normal_sprite_width: 162px;
+
+// =============================================================================
+// Media Queries
+// =============================================================================
+
+$media_mouse_droid:     em(300);
+$media_mouse_droid_max: em(299);
+$media_yoda:            em(460);
+$media_yoda_max:        em(459);
+$media_fat_yoda:        em(550);
+$media_fat_yoda_max:    em(549);
+$media_ewok:            em(680); // tablet
+$media_ewok_max:        em(679);
+$media_luke:            em(760);
+$media_luke_max:        em(759);
+$media_vader:           em(860); // desktop
+$media_vader_max:       em(859);
+$media_jabba:           em(1000);
+$media_jabba_max:       em(999);
+$media_atst:            em(1100);
+$media_atst_max:        em(1099);
+$media_atat:            em(1300);
+$media_atat_max:        em(1299);
+$media_deathstar:       em(1600);
+$media_deathstar_max:   em(1599);
+
+// =============================================================================
+// Partials to be shared with all .scss files.
+// =============================================================================
+
+// Add Compass' IE and vendor prefix support variables.
+@import "compass/support";
+// Better than Drupal's clearfix.
+@import "compass/utilities/general/clearfix";
+// See http://compass-style.org/help/tutorials/spriting/
+@import "compass/utilities/sprites";
+// Use one CSS3 mixin instead of multiple vendor prefixes.
+@import "compass/css3";
+// Helps set up a vertical rhythm.
+@import "compass/typography/vertical_rhythm";
